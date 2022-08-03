@@ -18,7 +18,6 @@ function Navbar() {
       return setMenuToggle("hidden")
     }
 
-    console.log(menuToggle)
 
   }
 
