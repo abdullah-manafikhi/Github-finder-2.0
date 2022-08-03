@@ -9,7 +9,7 @@ function Navbar() {
   const handleClick = () => {
     switch (menuToggle){
       case "hidden" :
-        return setMenuToggle("grid")
+        return setMenuToggle("grid z-10")
         break
       case "grid" : 
         return setMenuToggle("hidden")
@@ -27,11 +27,11 @@ function Navbar() {
         <a className="btn btn-ghost normal-cas text-xl"> <FaGithub className='mr-4 text-3xl font-bold' /> Github Finder </a>
         </div>
         <div className="flex-none">
-        <ul className={`menu menu-horizontal bg-gray-900 relative top-24 w-32  justify-center ${menuToggle} sm:top-0  sm:flex`}>
+          <ul className={`menu menu-horizontal bg-gray-900 relative top-24 w-32 justify-center ${menuToggle} sm:top-0  sm:flex`}>
             <li><Link to='/' className='font-semibold btn btn-ghost text-md rounded-xl'>Home</Link></li>
             <li><Link to='/about' className='font-semibold btn btn-ghost text-md rounded-xl'>About</Link></li>
-        </ul>
-        <button className={`sm:hidde text-xl btn btn-ghost`}  onClick={handleClick} ><FaBars /></button>
+          </ul>
+          <button className={`sm:hidden text-xl btn btn-ghost`}  onClick={handleClick} ><FaBars /></button>
         </div>
     </div>
   )
