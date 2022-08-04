@@ -38,18 +38,22 @@ function User() {
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center rounded-none p-12'>
             <div className='grid justify-items-center ml-8'>
                 <div className="card w-full bg-base-100 shadow-xl text-center opacity-40">
-                    <figure className='h-full w-8/12 md:w-full '><img className='rounded-2xl' src={user.avatar_url} alt="profile picture" /></figure>
+                    <figure className='h-full w-8/12 md:w-full '>
+                        <img className='rounded-2xl' src={user.avatar_url} alt="profile picture" />
+                    </figure>
                 </div>
                 <div className="relative bottom-16 right-12 ">
                     <h2 className="text-xl">{user.login}</h2>
                     <p className='text-md'>{user.name}</p>
                 </div>
             </div>
-            <div className="col-span-2 w-10/12 ">
-                <div className="flex flex-row  justify-left">
-                    <h2 className='text-4xl '>{user.name}</h2>
-                    <p className ='ml-4 h-6 mt-3 text-sm badge-primary rounded-lg pt-0.5 px-2'>{(user.hierable)?"hireable": "Unhireable" }</p>
-                    <p className='ml-4 h-6 mt-3 text-sm badge-success pt-0.5 px-2 rounded-lg'>{user.type}</p>
+            <div className="sm:col-span-2 w-10/12">
+                <div className="flex flex-row justify-left">
+                    <h2 className='text-4xl mr-0'>{user.name}</h2>
+                    <div className="flex flex-col sm:flex-row" >
+                        <p className ='ml-0 sm:ml-4 h-6 mt-3 text-sm badge-primary rounded-lg pt-0.5 px-2'>{(user.hierable)?"hireable": "Unhireable" }</p>
+                        <p className='ml-0  sm:ml-4 h-6 mt-3 text-sm badge-success pt-0.5 px-2 rounded-lg'>{user.type}</p>
+                    </div>
                 </div>
                 <div className='my-1'>
                     {user.bio}
@@ -118,7 +122,11 @@ function User() {
                 </div>
             </div>
         </div>
-        <div className="grid grid-cols px-20 mb-12">
+
+        {/*============= REPOSITORIES SECTION ==============*/}
+
+
+        <div className="grid grid-cols px-10 mb-12">
             <h2 className=' text-3xl font-bold'>Latest Repositories</h2>
             {repos.map((repo) => {return(
             <a key={repo.id} href={repo.html_url} target="_blank" className="bg-gray-800 h-auto w-full my-2 hover:bg-gray-900 p-12 ">

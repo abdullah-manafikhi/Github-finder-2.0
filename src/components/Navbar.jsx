@@ -22,7 +22,7 @@ function Navbar() {
   }
 
   return (
-    <div className="navbar bg-gray-900">
+    <div className="navbar bg-gray-900 w-full">
         <div className="flex-1">
         <a className="btn btn-ghost normal-cas text-xl"> <FaGithub className='mr-4 text-3xl font-bold' /> Github Finder </a>
         </div>
